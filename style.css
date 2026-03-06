@@ -13,6 +13,9 @@ html {
 
 body {
 	font-family: Arial, Geneva, sans-serif;
+	background-color: #292828;
+	color: #fff;
+
 }
 a {
 	color: #2772B0;
@@ -22,12 +25,15 @@ a {
 	max-width: 1200px;
 	margin: 0 auto;
 	float: none;
-	background-color: #fff;
+	background-color: #292828;
 }
 
+h1, h2 {
+	text-align: center;
+}
 div img {
 	width: 100%;
-	max-width: 225px; 
+	/* max-width: 225px;  */
 }
 
 /* grid system -- mobile first! */
@@ -36,36 +42,89 @@ div img {
 .row {
 	display: flex;
 	flex-flow: row wrap;
+	margin-bottom: 2rem;
+	gap: 1rem 0;
+
+	
 }
+
+
 
 /* attribute selector to give some margin between columns and apply styles to flex items */
 
 [class*="col-"] {
 	margin-left: 4%;
-	flex: 0 0 92%;
+	flex: 1 0 92%;
+	padding: 10px;
 }
 
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 20%;
+	margin-left: 4%;
+	justify-content: space-between;
+	height:fit-content;
+	
+}
+
+[class*="col-"] img {
+	width: 100%;
+
+}
 /* Add background colors to see how much space each column is taking */
 
-.col-1 {
-	background-color: #A3CDD9;
+.col-2 ul, .col-4 ul {
+    width: fit-content;
+    margin: 1rem auto;
 }
 
-.col-2 {
-	background-color: #FFFCE6;
+.col-1 {
+	background-color: #631106;
 }
+.col-1 a {
+	color: #fff;
+}
+
+
+.col-2 {
+	justify-content: center;
+	text-align: center;
+	background-color: #333;
+}
+
+.col-3 {
+	background-color: #31cf1c;
+}
+
+.col-4 {
+	text-align: center;
+	background-color: #333;
+}
+
+.col-5 {
+	background-color: #333;
+	margin-left: 0%;
+
+}
+
+.col-6 {
+		background-color: #333;
+		min-height: 800px;
+	}
+
+
 
 /* Tablet Landscape Screen Sizes */
 @media only screen and (min-width: 480px)  {
 	
   .col-1,
   .col-2 {
-		flex: 0 0 44%;
+		flex: 1 0 44%;
+		
 	}
   
-  
-
-
 
 }
 /* Desktop screen Sizes */
@@ -73,13 +132,21 @@ div img {
   
   
  	.col-1 {
-		flex: 0 0 20%;
+		flex:  1 0 20%;
 	}
   
   
   
 	.col-2 {
-		flex: 0 0 44%;
+		flex: 1 0 44%;
+	}
+
+	.col-3 {
+		flex: 1 0 68%;
+	}
+	
+	.col-6 {
+		flex:  1 0 20%;
 	}
 
 }
